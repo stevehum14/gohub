@@ -6,7 +6,7 @@ import (
 )
 
 type SignupPhoneExistRequest struct {
-	Phone string `json:"phone,omitempty" valid:"phone"`
+	Phone string `json:"phone,omitempty" form:"phone" valid:"phone"`
 }
 
 func ValidateSignupPhoneExist(data interface{},c *gin.Context) map[string][]string  {
@@ -26,7 +26,7 @@ func ValidateSignupPhoneExist(data interface{},c *gin.Context) map[string][]stri
 }
 
 type SignupEmailExistRequest struct {
-	Email string `json:"email,omitempty" valid:"email"`
+	Email string `json:"email,omitempty" form:"email" valid:"email"`
 }
 
 func ValidateSignupEmailExist(data interface{},c *gin.Context) map[string][]string  {
