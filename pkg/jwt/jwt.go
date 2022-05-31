@@ -29,7 +29,7 @@ type JWT struct {
 }
 // JWTCustomClaims 自定义载荷
 type JWTCustomClaims struct {
-	UserId string `json:"user_id"`
+	UserID string `json:"user_id"`
 	UserName string `json:"user_name"`
 	ExpireAtTime int64 `json:"expire_at_time"`
 	// StandardClaims 结构体实现了 Claims 接口继承了  Valid() 方法

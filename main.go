@@ -43,6 +43,11 @@ func main()  {
 	// 初始化路由绑定
 	 bootstrap.SetupRoute(router)
 
+	//router.GET("/test_auth", middlewares.AuthJWT(), func(c *gin.Context) {
+	//	userModel := auth.CurrentUser(c)
+	//	response.Data(c, userModel)
+	//})
+
 
 	// 注册一个路由
 	router.GET("/", func(c *gin.Context) {
