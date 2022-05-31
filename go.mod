@@ -27,9 +27,8 @@ require (
 	github.com/pborman/uuid v1.2.1 // indirect
 	github.com/pelletier/go-toml v1.9.5 // indirect
 	github.com/pelletier/go-toml/v2 v2.0.1 // indirect
-	github.com/pkg/errors v0.9.1 // indirect
 	github.com/ugorji/go v1.2.7 // indirect
-	github.com/ulule/limiter/v3 v3.10.0 // indirect
+	github.com/ulule/limiter/v3 v3.10.0
 	golang.org/x/sys v0.0.0-20220517195934-5e4e11fc645e // indirect
 	gopkg.in/yaml.v3 v3.0.0-20220512140231-539c8e751b99 // indirect
 )
