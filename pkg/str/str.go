@@ -14,7 +14,7 @@ func Singular(word string) string  {
 	return pluralize.NewClient().Singular(word)
 }
 // Snake 转为 snake_case，如 TopicComment -> topic_comment
-func snake(s string) string  {
+func Snake(s string) string  {
 	return strcase.ToSnake(s)
 }
 
