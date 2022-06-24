@@ -22,5 +22,4 @@ func RegisterDefaultCmd(rootCmd *cobra.Command,subCmd *cobra.Command){
 		args := append([]string{subCmd.Use}, os.Args[1:]...)
 		rootCmd.SetArgs(args)
 	}
-
 }

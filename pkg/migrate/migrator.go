@@ -154,5 +154,22 @@ func (migrator *Migrator) runUpMigration(mfile MigrationFile,batch int)  {
 	// 入库
 	err := migrator.DB.Create(&Migration{Migration: mfile.FileName, Batch: batch}).Error
 	console.ExitIf(err)
+}
+// Reset 回滚所有迁移
+func (migrator *Migrator) Reset()  {
+	migrations := []Migration{}
+	// 按照倒序读取所有迁移文件
+	migrator.DB.Order("id DESC").First(&migrations)
 
+	// 回滚所有迁移
+	if !migrator.rollbackMigrations(migrations) {
+		console.Success("[migrations] table is empty, nothing to reset.")
+	}
+}
+// Refresh 回滚所有迁移，并运行所有迁移
+func (Migrator *Migrator) Refresh()  {
+	// 回滚所有迁移
+	Migrator.Reset()
+	//再次执行所有迁移
+	Migrator.Up()
 }
