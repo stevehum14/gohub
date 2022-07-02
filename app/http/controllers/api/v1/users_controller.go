@@ -2,6 +2,7 @@ package v1
 
 import (
     "github.com/gin-gonic/gin"
+    "gohub/app/models/user"
     "gohub/pkg/auth"
     "gohub/pkg/response"
 )
@@ -16,3 +17,8 @@ func (ctrl *UsersController) CurrentUser(c *gin.Context)  {
     response.Data(c,userModel)
 }
 
+// Index 所有用户
+func (ctrl *UsersController) Index(c *gin.Context)  {
+    data := user.All()
+    response.Data(c,data)
+}
